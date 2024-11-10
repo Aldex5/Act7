@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image";
+    gap: 10px;
+}
+
+.header { grid-area: header; background-color: #1A1A2E; color: white; padding: 20px; text-align: center; }
+.menu { grid-area: menu; background-color: #FF4C4C; color: white; padding: 20px; text-align: center; }
+.hero { grid-area: hero; background-color: #4EA5D9; color: white; padding: 20px; text-align: center; }
+.main { grid-area: main; background-color: #0A043C; color: white; padding: 20px; text-align: center; }
+.banner { grid-area: banner; background-color: #F2A154; color: white; padding: 20px; text-align: center; }
+.extra { grid-area: extra; background-color: #1ABC9C; color: white; padding: 20px; text-align: center; }
+.image { grid-area: image; background-color: #C6E0FF; color: black; padding: 20px; text-align: center; }
+
+/* Styles para mobile */
+@media (max-width: 600px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "menu"
+            "hero"
+            "main"
+            "banner"
+            "extra"
+            "image";
+    }
+}
+
+/* Styles para tablet */
+@media (min-width: 601px) and (max-width: 992px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "hero hero"
+            "menu main"
+            "banner banner"
+            "extra image";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Styles para escritorio */
+@media (min-width: 993px) {
+    .container {
+        grid-template-areas:
+            "header menu"
+            "hero hero"
+            "main image"
+            "banner banner"
+            "extra extra";
+        grid-template-columns: 2fr 1fr;
+    }
+}
